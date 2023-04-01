@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./LoginPage.module.css";
 import instance from "../../assets/services/api";
 import { BrowserRouter as Router, useNavigate } from "react-router-dom";
@@ -27,21 +27,6 @@ const LoginPage = () => {
         }, 4000);
         return () => clearTimeout(time);
       });
-
-    // create(loginInfo)
-    //   .then((response) => {
-    //     if (response.data.accessToken) {
-    //       navigate("/doctors");
-    //       localStorage.setItem("authToken", response.data.accessToken);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     setNotification(error);
-    //     const time = setTimeout(() => {
-    //       setNotification("");
-    //     }, 4000);
-    //     return () => clearTimeout(time);
-    //   });
   };
 
   return (
