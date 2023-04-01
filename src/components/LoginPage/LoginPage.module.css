@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
+
+.formContainer {
+    background-color: #E0E2DB;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #0B0A0A;
+    flex-direction: column;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 600px;
+    padding: 80px;
+    row-gap: 20px;
+    width: 500px;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+
+.LogoInLoginPage {
+    position: absolute;
+    top: -50px;
+    left: 100px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    margin-top: 200px;
+}
+
+.loginForm input {
+    background-color: #F5F6F4;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    height: 25px;
+    margin: 15px;
+    outline: none;
+}
+
+
+
+
+.loginBtn {
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(12, 127, 89);
+    color: #fff;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    opacity: 0.6;
+}
+
+.errNotification {
+    position: absolute;
+    top: 255px;
+    left: 190px;
+    color: red;
+}
