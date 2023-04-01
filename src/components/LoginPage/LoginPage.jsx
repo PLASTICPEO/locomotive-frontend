@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./LoginPage.module.css";
 import { create } from "../../assets/services/requests";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  useParams,
-  useNavigate,
-  useMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
