@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
+
+.contentContainer {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 310px;
+}
+
+.title {
+    margin: 10px;
+    padding: 15px;
+    font-family: 'Josefin Sans';
+    color: #3E4E50;
+    cursor: default;
+}
+
+.addUserBtn {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(82, 146, 30);
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    margin: 15px;
+    padding: 15px;
+    width: 150px;
+}
+
+.removeUserBtn {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(207, 69, 69);
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    margin: 15px;
+    padding: 15px;
+    width: 150px;
+}
+
+.addUserBtn:hover,
+.removeUserBtn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.userContainer {
+    grid-row-gap: 5px;
+    display: grid;
+    grid-auto-rows: 450px;
+    grid-template-columns: repeat(4, 10fr);
+    height: auto;
+    margin-left: 15px;
+    width: 100%;
+
+}
+
+.userPhoto {
+    height: 250px;
+    width: 200px;
+    border-radius: 15px;
+}
+
+.fullName {
+    font-family: 'Josefin Sans';
+    font-size: 24px;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.userEmail {
+    font-family: 'Josefin Sans';
+    font-size: 18px;
+    margin: 10px 0px;
+
+}

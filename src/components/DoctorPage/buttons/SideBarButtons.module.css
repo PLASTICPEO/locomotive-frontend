@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
+
+
+.sideBarContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.sideBar {
+    height: 100vh;
+    background-color: #d3d0cf;
+    box-shadow: 10px 10px 45px #d3d0cf;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    flex-direction: column;
+    margin: 45px 45px 0px 0px;
+    text-align: center;
+
+}
+
+.btn {
+    border-radius: 3px;
+    padding: 25px;
+    width: 170px;
+    font-weight: bold;
+    margin: 10px 0px;
+    font-size: 24px;
+    list-style: none;
+    background-color: #E6AF2E;
+    cursor: pointer;
+    color: #2c2727;
+}
+
+.btn:hover {
+    background-color: #dbbc73;
+}

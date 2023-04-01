@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./LoginPage.module.css";
-import { create } from "../../assets/services/requests";
+import instance from "../../assets/services/api";
 import { BrowserRouter as Router, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [loginInfo, setLoginInfo] = useState({
+  const [newUser, setNewUser] = useState({
     email: "",
     password: "",
   });
@@ -14,12 +14,11 @@ const LoginPage = () => {
   const handleSumbimt = (event) => {
     event.preventDefault();
 
-    create(loginInfo)
+    instance
+      .post("/api/auth/login", newUser)
       .then((response) => {
-        if (response.data.accessToken) {
-          navigate("/doctors");
-          localStorage.setItem("authToken", response.data.accessToken);
-        }
+        navigate("/doctors");
+        localStorage.setItem("authToken", response.data.accessToken);
       })
       .catch((error) => {
         setNotification(error);
@@ -28,6 +27,21 @@ const LoginPage = () => {
         }, 4000);
         return () => clearTimeout(time);
       });
+
+    // create(loginInfo)
+    //   .then((response) => {
+    //     if (response.data.accessToken) {
+    //       navigate("/doctors");
+    //       localStorage.setItem("authToken", response.data.accessToken);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     setNotification(error);
+    //     const time = setTimeout(() => {
+    //       setNotification("");
+    //     }, 4000);
+    //     return () => clearTimeout(time);
+    //   });
   };
 
   return (
@@ -46,15 +60,13 @@ const LoginPage = () => {
           Email
           <input
             type={"email"}
-            onChange={(e) =>
-              setLoginInfo({ ...loginInfo, email: e.target.value })
-            }
+            onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
           />
           Password
           <input
             type={"password"}
             onChange={(e) =>
-              setLoginInfo({ ...loginInfo, password: e.target.value })
+              setNewUser({ ...newUser, password: e.target.value })
             }
           />
           <button className={style.loginBtn}>Login</button>

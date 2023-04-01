@@ -1,5 +1,13 @@
+import SideBarButtons from "./buttons/SideBarButtons";
+import DoctorsPageContent from "./doctorsPageContent/DoctorsPageContent";
+
 const DoctorPage = () => {
-  return <h1>Doctor Page</h1>;
+  return (
+    <>
+      <DoctorsPageContent />
+      <SideBarButtons />
+    </>
+  );
 };
 
 export default DoctorPage;

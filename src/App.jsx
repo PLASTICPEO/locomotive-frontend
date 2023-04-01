@@ -1,7 +1,7 @@
 import LoginPage from "./components/LoginPage/LoginPage";
 import style from "./App.module.css";
 import DoctorPage from "./components/DoctorPage/DoctorPage";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
