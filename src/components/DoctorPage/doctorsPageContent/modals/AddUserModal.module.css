@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
+
+.AddUserModalContainer {
+    position: absolute;
+    height: 100vw;
+    width: 100%;
+    background-color: rgba(4, 4, 4, 0.5);
+
+}
+
+
+.addUserModal {
+    position: fixed;
+    top: 15%;
+    left: 40%;
+    width: 450px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: #d3d0cf;
+    padding: 20px;
+    color: #272727;
+    font-family: 'Josefin Sans';
+    z-index: 1;
+}
+
+.closeModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(207, 69, 69);
+    color: #fff;
+    cursor: pointer;
+}
+
+.inputsContainer input {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    width: 390px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.uploadFileInput {
+    padding: 15px;
+}
+
+
+
+.submitBtnContainer {
+    margin: auto;
+    width: max-content;
+}
+
+.submitBtn {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(207, 69, 69);
+    color: #fff;
+    cursor: pointer;
+    margin: 15px;
+    width: 150px;
+}
+
+.submitBtn:hover,
+.closeModal:hover {
+    opacity: 0.7;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import style from "./LoginPage.module.css";
-import instance from "../../assets/services/api";
+import api from "../../assets/services/api";
+import { setToken } from "../../assets/services/api";
 import { BrowserRouter as Router, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -14,11 +15,11 @@ const LoginPage = () => {
   const handleSumbimt = (event) => {
     event.preventDefault();
 
-    instance
+    api
       .post("/api/auth/login", newUser)
       .then((response) => {
         navigate("/doctors");
-        localStorage.setItem("authToken", response.data.accessToken);
+        setToken("Bearer", response.data.accessToken);
       })
       .catch((error) => {
         setNotification(error);

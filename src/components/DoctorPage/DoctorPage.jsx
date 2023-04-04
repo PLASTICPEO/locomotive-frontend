@@ -1,4 +1,4 @@
-import SideBarButtons from "./buttons/SideBarButtons";
+import SideBarButtons from "../Sidebarbuttons/SideBarButtons";
 import DoctorsPageContent from "./doctorsPageContent/DoctorsPageContent";
 
 const DoctorPage = () => {

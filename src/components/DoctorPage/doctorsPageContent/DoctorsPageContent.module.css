@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     margin-left: 310px;
+    position: relative;
 }
 
 .title {
@@ -47,26 +48,24 @@
 }
 
 .userContainer {
-    grid-row-gap: 5px;
     display: grid;
-    grid-auto-rows: 450px;
-    grid-template-columns: repeat(4, 10fr);
-    height: auto;
-    margin-left: 15px;
-    width: 100%;
+    grid-template-columns: repeat(4, 5fr);
+    padding: 10px;
 
 }
 
 .userPhoto {
-    height: 250px;
-    width: 200px;
+    height: 220px;
+    width: 240px;
     border-radius: 15px;
+    margin: 15px;
+    object-fit: cover;
 }
 
 .fullName {
     font-family: 'Josefin Sans';
     font-size: 24px;
-    margin: 10px 0px;
+    margin: 15px 0px;
     font-weight: bold;
 }
 

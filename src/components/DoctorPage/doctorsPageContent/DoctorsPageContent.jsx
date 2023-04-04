@@ -1,22 +1,48 @@
 import { useEffect, useState } from "react";
 import style from "./DoctorsPageContent.module.css";
-import instance from "../../../assets/services/api";
+import api from "../../../assets/services/api";
+import AddUserModal from "./modals/AddUserModal";
+import RemoveUserModal from "./modals/RemoveUserModal";
 
 const DoctorsPageContent = () => {
   const [doctors, setDoctors] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [removeModal, setRemoveModal] = useState(false);
+  const [userId, setUserId] = useState("");
+
   useEffect(() => {
-    instance
+    api
       .get("/api/doctor")
       .then((response) => {
         setDoctors(response.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [removeModal]);
+
+  useEffect(() => {
+    console.log(doctors);
+  }, [doctors]);
+
+  const toggleModal = () => setModalOpen(!modalOpen);
+  const toggleRemoveUserModal = () => {
+    setRemoveModal(!removeModal);
+  };
 
   return (
     <div className={style.contentContainer}>
+      {modalOpen ? <AddUserModal toggleModal={toggleModal} /> : ""}
+      {removeModal ? (
+        <RemoveUserModal
+          toggleRemoveUserModal={toggleRemoveUserModal}
+          userId={userId}
+        />
+      ) : (
+        ""
+      )}
       <h1 className={style.title}>Doctors</h1>
-      <button className={style.addUserBtn}>Add User</button>
+      <button className={style.addUserBtn} onClick={() => toggleModal()}>
+        + Add User
+      </button>
       <h1 className={style.title}>Doctors List</h1>
       <div className={style.userContainer}>
         {doctors.map((dr) => {
@@ -32,7 +58,15 @@ const DoctorsPageContent = () => {
 
               <p className={style.userEmail}>{dr.email}</p>
 
-              <button className={style.removeUserBtn}>Remove User</button>
+              <button
+                className={style.removeUserBtn}
+                onClick={() => {
+                  toggleRemoveUserModal();
+                  setUserId(dr.id);
+                }}
+              >
+                Remove User
+              </button>
             </div>
           );
         })}

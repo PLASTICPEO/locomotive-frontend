@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
 
-.sideBarContainer {
-    width: fit-content;
+.mainContainer {
+    position: relative;
 }
 
-.sideBar {
-    position: absolute;
+.SideBarButtonsContainer {
+    position: fixed;
     top: 0%;
     left: 0%;
-    height: 100%;
-    background-color: #F9E0D9;
+    z-index: 0;
 }
