@@ -1,5 +1,5 @@
-import axios from "axios";
-import { AUTH_TOKEN } from "./constants/constants";
+import axios from 'axios';
+import { AUTH_TOKEN } from './constants/constants';
 
 const authToken = localStorage.getItem(AUTH_TOKEN);
 
@@ -10,7 +10,7 @@ if (authToken) {
 }
 
 const axiosParams = {
-  baseURL: "http://localhost:3002",
+  baseURL: import.meta.env.BASE_URL,
   headers,
 };
 
