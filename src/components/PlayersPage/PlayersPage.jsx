@@ -3,7 +3,6 @@ import PlayersPageContent from "./playersPageContent/PlayersPageContent";
 const PlayersPage = () => {
   return (
     <>
-      <SideBarButtons />
       <PlayersPageContent />
     </>
   );

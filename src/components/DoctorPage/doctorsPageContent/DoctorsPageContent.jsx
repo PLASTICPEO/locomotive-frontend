@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import style from "./DoctorsPageContent.module.css";
 import api from "../../../assets/services/api";
-import AddUserModal from "./modals/AddUserModal";
-import RemoveUserModal from "./modals/RemoveUserModal";
+import AddUserModal from "./modal/AddUserModal";
+import RemoveUserModal from "./modal/RemoveUserModal";
 
 const DoctorsPageContent = () => {
   const [doctors, setDoctors] = useState([]);

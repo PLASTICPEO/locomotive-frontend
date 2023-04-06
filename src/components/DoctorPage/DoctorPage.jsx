@@ -5,7 +5,6 @@ const DoctorPage = () => {
   return (
     <>
       <DoctorsPageContent />
-      <SideBarButtons />
     </>
   );
 };

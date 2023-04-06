@@ -1,21 +1,20 @@
-import style from './SideBarButtons.module.css';
-import { AUTH_TOKEN } from '../../assets/services/constants/constants';
-import { useNavigate, Link } from 'react-router-dom';
+import style from "./SideBarButtons.module.css";
+import { AUTH_TOKEN } from "../../assets/services/constants/constants";
+import { useNavigate, Link } from "react-router-dom";
 
 const SideBarButtons = () => {
   const navigate = useNavigate();
 
   const logOut = () => {
     localStorage.removeItem(AUTH_TOKEN);
-    navigate('/');
   };
 
   return (
     <div className={style.sideBarContainer}>
       <div className={style.sideBar}>
         <img
-          src={'http://localhost:3002/icons/loco-logo.png'}
-          width={'290px'}
+          src={"http://localhost:3002/icons/loco-logo.png"}
+          width={"290px"}
         />
         <ul className={style.btnContainer}>
           <Link to="/players">
@@ -24,9 +23,11 @@ const SideBarButtons = () => {
           <Link to="/doctors">
             <li className={style.btn}>Doctors</li>
           </Link>
-          <li className={style.btn} onClick={() => logOut()}>
-            Log out
-          </li>
+          <Link to="/">
+            <li className={style.btn} onClick={() => logOut()}>
+              Log out
+            </li>
+          </Link>
         </ul>
       </div>
     </div>

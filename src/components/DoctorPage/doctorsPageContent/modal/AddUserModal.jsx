@@ -13,14 +13,13 @@ const AddUserModal = ({ toggleModal }) => {
 
   const addNewUser = () => {
     const formData = new FormData();
-    formData.append("firstname", newUser.firstName);
-    formData.append("lastname", newUser.lastName);
-    formData.append("email", newUser.email);
-    formData.append("password", newUser.password);
-    formData.append("photo", newUser.photo);
+    const entries = Object.entries(newUser);
+    for (const [key, value] of entries) {
+      formData.append(key, value);
+    }
 
     api
-      .post("/api/doctor/create", newUser, {
+      .post("/api/doctor/create", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -31,10 +30,6 @@ const AddUserModal = ({ toggleModal }) => {
       .catch((error) => console.log(error));
   };
 
-  const handleSubmit = () => {
-    e.preventDefault();
-  };
-
   return (
     <div className={style.AddUserModal}>
       <div className={style.addUserModal}>
@@ -42,7 +37,7 @@ const AddUserModal = ({ toggleModal }) => {
           X
         </button>
         <div className={style.inputsContainer}>
-          <form>
+          <div>
             Add Picture
             <input
               type="file"
@@ -89,7 +84,7 @@ const AddUserModal = ({ toggleModal }) => {
                 Submit
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
