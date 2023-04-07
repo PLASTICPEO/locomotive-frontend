@@ -15,15 +15,15 @@ const DoctorsPageContent = () => {
       .get("/api/doctor")
       .then((response) => {
         setDoctors(response.data);
+        console.log(response.data);
       })
       .catch((error) => console.log(error));
-  }, [removeModal]);
+    console.log(modalOpen, removeModal);
+  }, [modalOpen, removeModal]);
 
-  useEffect(() => {
-    console.log(doctors);
-  }, [doctors]);
-
-  const toggleModal = () => setModalOpen(!modalOpen);
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
   const toggleRemoveUserModal = () => {
     setRemoveModal(!removeModal);
   };

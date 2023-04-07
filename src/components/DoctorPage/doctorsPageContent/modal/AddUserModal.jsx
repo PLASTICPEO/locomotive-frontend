@@ -37,7 +37,7 @@ const AddUserModal = ({ toggleModal }) => {
           X
         </button>
         <div className={style.inputsContainer}>
-          <div>
+          <form>
             Add Picture
             <input
               type="file"
@@ -84,7 +84,7 @@ const AddUserModal = ({ toggleModal }) => {
                 Submit
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

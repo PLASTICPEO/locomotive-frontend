@@ -1,13 +1,11 @@
 import style from "./SideBarButtons.module.css";
 import { AUTH_TOKEN } from "../../assets/services/constants/constants";
 import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const SideBarButtons = () => {
-  const navigate = useNavigate();
-
-  const logOut = () => {
-    localStorage.removeItem(AUTH_TOKEN);
-  };
+  const { logout } = useContext(AuthContext);
 
   return (
     <div className={style.sideBarContainer}>
@@ -23,11 +21,9 @@ const SideBarButtons = () => {
           <Link to="/doctors">
             <li className={style.btn}>Doctors</li>
           </Link>
-          <Link to="/">
-            <li className={style.btn} onClick={() => logOut()}>
-              Log out
-            </li>
-          </Link>
+          <li className={style.btn} onClick={() => logout()}>
+            Log out
+          </li>
         </ul>
       </div>
     </div>

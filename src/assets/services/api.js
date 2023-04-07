@@ -1,13 +1,13 @@
 import axios from "axios";
 import { AUTH_TOKEN } from "./constants/constants";
 
-const authToken = localStorage.getItem(AUTH_TOKEN);
+const token = localStorage.getItem(AUTH_TOKEN);
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const headers = {};
 
-if (authToken) {
-  headers.Authorization = `Bearer ${authToken}`;
+if (token) {
+  headers.Authorization = `Bearer ${token}`;
 }
 
 const axiosParams = {

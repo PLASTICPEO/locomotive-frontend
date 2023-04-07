@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import style from "./LoginPage.module.css";
 import api from "../../assets/services/api";
 import { setToken } from "../../assets/services/api";
 import { useNavigate, Navigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -12,20 +13,10 @@ const LoginPage = () => {
   });
   const [notification, setNotification] = useState();
 
+  const { login } = useContext(AuthContext);
+
   const handleSumbimt = () => {
-    api
-      .post("/api/auth/login", newUser)
-      .then((response) => {
-        setToken("Bearer", response.data.accessToken);
-        navigate("/doctors");
-      })
-      .catch((error) => {
-        setNotification(error);
-        const time = setTimeout(() => {
-          setNotification("");
-        }, 4000);
-        return () => clearTimeout(time);
-      });
+    login(newUser);
   };
 
   return (

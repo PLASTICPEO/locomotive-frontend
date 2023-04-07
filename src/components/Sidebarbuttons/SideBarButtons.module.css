@@ -5,6 +5,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-right: 1px solid black;
 
 }
 
@@ -12,7 +13,7 @@
 
 .sideBar {
     height: 100vh;
-    background-color: #d3d0cf;
+    background-color: #FDFFFC;
     box-shadow: 10px 10px 45px #d3d0cf;
 }
 
@@ -41,9 +42,9 @@ a {
     list-style: none;
     background-color: #E6AF2E;
     cursor: pointer;
-    color: #2c2727;
+    color: #fcfcfc;
 }
 
 .btn:hover {
-    background-color: #dbbc73;
+    color: rgba(38, 38, 38, 0.8);
 }
