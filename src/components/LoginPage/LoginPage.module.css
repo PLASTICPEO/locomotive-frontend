@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=EB+Garamond:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200&family=Oswald:wght@300&family=Roboto:wght@500&family=Rubik:wght@300&family=Share+Tech+Mono&family=Unbounded:wght@600&display=swap');
 
 .formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #eff3f6;
     border-radius: 20px;
     box-shadow: 0 0 15px #011624;
@@ -8,27 +11,35 @@
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
     height: 600px;
-    padding: 80px;
-    row-gap: 20px;
     width: 500px;
-    position: relative;
     transition: 0.3s;
+    overflow: hidden;
+
+}
+
+.LoginPageLogo {
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: 1.5s;
+
+}
+
+.LoginPageLogo:hover {
+    transform: scale(1.04);
+
 }
 
 
 
-.LogoInLoginPage {
-    position: absolute;
-    top: -50px;
-    left: 100px;
-}
+
+
 
 .loginForm {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    padding: 10px;
-    margin-top: 200px;
+    width: 350px;
+    overflow: hidden;
+
 }
 
 .loginForm input {
@@ -40,7 +51,7 @@
     font-weight: bold;
     padding: 20px;
     height: 25px;
-    margin: 15px;
+    margin: 10px;
     outline-color: #339ce2;
 }
 
@@ -64,8 +75,30 @@
 }
 
 .errNotification {
-    position: absolute;
-    top: 255px;
-    left: 190px;
+
     color: red;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .formContainer {
+        width: 300px;
+        height: 500px;
+
+    }
+
+    .LoginPageLogo {
+        width: 250px;
+    }
+
+    .loginForm {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .LoginPageLogo {
+        width: 200px;
+
+    }
 }

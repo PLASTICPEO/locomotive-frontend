@@ -5,7 +5,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-right: 1px solid black;
+    border-right: 1px solid #5CBEFF;
 
 }
 
@@ -13,8 +13,9 @@
 
 .sideBar {
     height: 100vh;
-    background-color: #FDFFFC;
+    background-color: #A0A4B8;
     box-shadow: 10px 10px 45px #d3d0cf;
+    overflow: hidden;
 }
 
 .btnContainer {
@@ -33,18 +34,43 @@ a {
 }
 
 .btn {
-    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
     padding: 25px;
     width: 170px;
     font-weight: bold;
     margin: 10px 0px;
     font-size: 24px;
     list-style: none;
-    background-color: #E6AF2E;
+    background-color: #35a9f6;
     cursor: pointer;
     color: #fcfcfc;
 }
 
 .btn:hover {
     color: rgba(38, 38, 38, 0.8);
+}
+
+
+.logOutBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+    width: 170px;
+    font-weight: bold;
+    margin: 10px 0px;
+    font-size: 24px;
+    list-style: none;
+    background-color: #35a9f6;
+    cursor: pointer;
+    color: #fcfcfc;
+}
+
+.logOutBtn:hover {
+    background-color: rgb(237, 62, 62);
+
 }

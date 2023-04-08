@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "./DoctorsPageContent.module.css";
-import api from "../../../assets/services/api";
+import api from "../../assets/services/api";
 import AddUserModal from "./modal/AddUserModal";
 import RemoveUserModal from "./modal/RemoveUserModal";
 
@@ -11,15 +11,10 @@ const DoctorsPageContent = () => {
   const [userId, setUserId] = useState("");
 
   useEffect(() => {
-    api
-      .get("/api/doctor")
-      .then((response) => {
-        setDoctors(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => console.log(error));
-    console.log(modalOpen, removeModal);
-  }, [modalOpen, removeModal]);
+    api.get("/api/doctor").then((response) => {
+      setDoctors(response.data);
+    });
+  }, [removeModal, modalOpen]);
 
   const toggleModal = () => {
     setModalOpen(!modalOpen);
@@ -52,21 +47,25 @@ const DoctorsPageContent = () => {
                 className={style.userPhoto}
                 src={`http://localhost:3002/${dr.photo}`}
               />
-              <p className={style.fullName}>
-                {dr.firstName} {dr.lastName}
-              </p>
+              <div className={style.doctorData}>
+                <div className={style.name}>
+                  <p className={style.fullName}>
+                    {dr.firstName} {dr.lastName}
+                  </p>
+                </div>
 
-              <p className={style.userEmail}>{dr.email}</p>
+                <p className={style.userEmail}>{dr.email}</p>
 
-              <button
-                className={style.removeUserBtn}
-                onClick={() => {
-                  toggleRemoveUserModal();
-                  setUserId(dr.id);
-                }}
-              >
-                Remove User
-              </button>
+                <button
+                  className={style.removeUserBtn}
+                  onClick={() => {
+                    toggleRemoveUserModal();
+                    setUserId(dr.id);
+                  }}
+                >
+                  Remove User
+                </button>
+              </div>
             </div>
           );
         })}

@@ -4,8 +4,6 @@
     position: absolute;
     height: 100vw;
     width: 100%;
-    background-color: rgba(4, 4, 4, 0.5);
-
 }
 
 
@@ -14,13 +12,14 @@
     top: 15%;
     left: 40%;
     width: 450px;
-    height: 500px;
+    height: 550px;
     border-radius: 5px;
-    border: 1px solid #272727;
-    background-color: rgba(253, 255, 252, 0.9);
+    border: 1px solid #5CBEFF;
+    background-color: rgb(253, 255, 252);
     padding: 20px;
     color: #272727;
     font-family: 'Josefin Sans';
+    overflow: hidden;
 }
 
 .closeModal {
@@ -87,4 +86,11 @@
 .submitBtn:hover,
 .closeModal:hover {
     opacity: 0.7;
+}
+
+.fieldsAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(207, 69, 69);
 }

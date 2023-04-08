@@ -4,8 +4,8 @@
     left: 40%;
     width: 450px;
     border-radius: 5px;
-    background-color: rgba(253, 255, 252, 0.9);
-    opacity: 0.9;
+    background-color: rgb(253, 255, 252);
+    border: 1px solid #5CBEFF;
     padding: 20px;
     color: #272727;
     font-family: 'Josefin Sans';

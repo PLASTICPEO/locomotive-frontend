@@ -3,7 +3,6 @@ import { AUTH_TOKEN } from "./constants/constants";
 
 const token = localStorage.getItem(AUTH_TOKEN);
 const baseUrl = import.meta.env.VITE_BASE_URL;
-
 const headers = {};
 
 if (token) {

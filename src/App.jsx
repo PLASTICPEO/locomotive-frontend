@@ -1,12 +1,12 @@
-import style from "./App.module.css";
 import { Routes, Route, Navigate } from "react-router-dom";
-import React, { useContext, useEffect } from "react";
-import ProtectedRoute from "./components/ProtectedRoute/index.jsx";
-import DoctorPage from "./components/DoctorPage/DoctorPage";
-import LoginPage from "./components/LoginPage/LoginPage";
-import PlayersPage from "./components/PlayersPage/PlayersPage";
-import SideBarButtons from "./components/Sidebarbuttons/SideBarButtons";
 import { AuthContext } from "./context/authContext";
+import React, { useContext } from "react";
+import ProtectedRoute from "./components/ProtectedRoute/index.jsx";
+import DoctorsPageContent from "./components/DoctorPage/DoctorsPageContent";
+import LoginPage from "./components/LoginPage/LoginPage";
+import PlayersPageContent from "./components/PlayersPage/PlayersPageContent";
+import SideBarButtons from "./components/Sidebarbuttons/SideBarButtons";
+import style from "./App.module.css";
 
 const App = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -22,7 +22,7 @@ const App = () => {
           path="/players"
           element={
             <ProtectedRoute>
-              <PlayersPage />
+              <PlayersPageContent />
               <SideBarButtons />
             </ProtectedRoute>
           }
@@ -31,7 +31,7 @@ const App = () => {
           path="/doctors"
           element={
             <ProtectedRoute>
-              <DoctorPage />
+              <DoctorsPageContent />
               <SideBarButtons />
             </ProtectedRoute>
           }

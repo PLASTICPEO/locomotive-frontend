@@ -1,15 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../assets/services/api";
 import { setToken } from "../assets/services/api";
 import { AUTH_TOKEN } from "../assets/services/constants/constants";
+import api from "../assets/services/api";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  console.log(children);
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem(AUTH_TOKEN);
@@ -27,7 +27,13 @@ const AuthProvider = ({ children }) => {
         navigate("/doctors");
         setIsAuthenticated(true);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setNotification(true);
+        const notificationTimer = setTimeout(() => {
+          setNotification(false);
+        }, 3000);
+        return () => clearTimeout(notificationTimer);
+      });
   };
 
   const logout = () => {
@@ -39,6 +45,7 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
+        notification,
         isAuthenticated,
         login,
         logout,
