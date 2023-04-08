@@ -1,5 +1,5 @@
-import style from "./AddUserModal.module.css";
 import { useEffect, useState } from "react";
+import style from "./AddUserModal.module.css";
 import api from "../../../assets/services/api";
 
 const AddUserModal = ({ toggleModal }) => {

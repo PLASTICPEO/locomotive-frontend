@@ -1,10 +1,9 @@
 import api from "../../../assets/services/api";
 import style from "./RemoveUserModal.module.css";
+
 const RemoveUserModal = ({ toggleRemoveUserModal, userId }) => {
   const confirm = (user) => {
-    api
-      .post(`/api/doctor/delete/${user}`)
-      .then((response) => toggleRemoveUserModal());
+    api.post(`/api/doctor/delete/${user}`).then(() => toggleRemoveUserModal());
   };
 
   return (

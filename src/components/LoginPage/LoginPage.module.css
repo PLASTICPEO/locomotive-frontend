@@ -17,25 +17,11 @@
 
 }
 
-.LoginPageLogo {
-    border-radius: 15px;
-    margin-bottom: 10px;
-    transition: 1.5s;
-
-}
-
-.LoginPageLogo:hover {
-    transform: scale(1.04);
-
-}
-
-
-
-
-
-
 .loginForm {
     display: flex;
+    justify-content: center;
+
+    text-align: start;
     flex-direction: column;
     width: 350px;
     overflow: hidden;
@@ -74,8 +60,12 @@
     opacity: 0.6;
 }
 
-.errNotification {
+.notificationContainer {
+    height: 20px;
+    text-align: center;
+}
 
+.errNotification {
     color: red;
 }
 

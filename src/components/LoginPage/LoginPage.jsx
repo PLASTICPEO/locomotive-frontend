@@ -17,14 +17,16 @@ const LoginPage = () => {
   return (
     <>
       <div className={style.formContainer}>
-        <a href="https://en.wikipedia.org/wiki/FC_Locomotive_Tbilisi">
-          <img className={style.LoginPageLogo} src={locomotiveLogo} />
-        </a>
-        {notification ? (
-          <div className={style.errNotification}>User not found . . .</div>
-        ) : (
-          ""
-        )}
+        <img className={style.LoginPageLogo} src={locomotiveLogo} />
+        <div className={style.notificationContainer}>
+          {notification ? (
+            <div className={style.errNotification}>
+              Sorry, user not found . . .
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
         <div className={style.loginForm}>
           Email
           <input
